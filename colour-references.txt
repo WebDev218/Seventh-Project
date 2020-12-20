@@ -1,0 +1,29 @@
+rgb()
+Header rgb(116, 119, 191)
+main nav rgb(77, 76, 114)
+icon base colour: rgb(166, 166, 185)
+button rgb(115, 119, 191)
+textbox rgb(251, 251, 251)
+Period select font colour rgb(143, 143, 143)
+Highlighted period rgb(129, 201, 143)
+main-alert-message rbg(115, 119, 191)
+grid lines rgb(216, 216, 216) 
+social media icon background rgb(115, 119, 191)
+social card background rgb(251, 251, 251)
+
+
+
+
+
+
+
+
+
+
+
+
+twitter: 10,345
+FB: 8,739
+google: 2,530
+
+
