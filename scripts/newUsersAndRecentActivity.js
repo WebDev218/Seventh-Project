@@ -13,8 +13,6 @@ class user {
 }
 
 
-
-
 const newMembers = document.querySelector('#members');
 const recentActivity = document.querySelector('#recent-activity');
 
@@ -86,7 +84,7 @@ function createRecentActivityCard(user) {
 	recentCard.className = 'activity user-card';
 	recentImage.src = `images/${user.profilePic}`;
 	recentName.textContent = `${user.name} ${user.lastAction}`;	
-	lastActive.textContent = `${new Date() - new Date(user.lastActive)}`;
+	lastActive.textContent = `Active: ${new Date().getDate() - new Date(user.lastActive).getDate()} day(s) ago.`;
 
 	recentCard.appendChild(recentImage);
 	recentCard.appendChild(recentName);

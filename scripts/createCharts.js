@@ -26,7 +26,6 @@ function updateChart(period, element) {
 	}
 
 	if (period === 'Monthly') {
-		console.log(period);
 		trafficData.labels = monthlyTraffic[0];
 		trafficChart.data.datasets[0].data = monthlyTraffic[1];
 	} else if (period === 'Weekly') {
