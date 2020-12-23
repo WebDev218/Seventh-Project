@@ -152,7 +152,7 @@ header div {
 
 /* Message box */
 
-.messageModal {
+.message-modal {
 	/* ==========
 		This is the grey overlay that covers the screen. I made it this big
 		so clicking out of the message box will allow you to close it
@@ -169,7 +169,7 @@ header div {
 	background-color: rgba(0,0,0,0.4);
 }
 
-.modalContent {
+.modal-content {
 	/* ==========
 		The message content goes here. It should be in keeping with the page colour scheme
 	==========*/
@@ -506,6 +506,73 @@ label strong {
 
 
 @media (max-width: 320px) {
+	header {
+	padding: 0;	
+	text-align: center;
+	}
+
+	header div {
+		float: none;
+		width: 100%;
+	}
+
+	#main-content {
+		padding: 0;
+		max-width: 100%;
+	}
+
+	.your-app {	
+		float: none;
+	}
+
+	.icon {
+		max-width: 25px;
+		/*margin: 0;*/
+	}
+
+	.notification {		
+		margin: 0 10px;
+	}
+
+
+
+	.modal-content {
+		/* ==========
+			The message content goes here. It should be in keeping with the page colour scheme
+		==========*/
+		margin: auto 0;
+		padding: 10px;	
+		width: 100%;
+		max-height: 90%;
+	}
+
+	.close {
+		color: #ffffff;
+	}
+
+	.close:hover, .close:focus {
+		color: #aaaaaa;
+	}
+
+
+	.traffic-time-filter {
+		text-align: center;	
+		width: 100%;
+	}
+	.traffic-period {
+		display: inline-block;
+		color: rgb(143, 143, 143);
+		float: right;		
+		width: 25%;
+		/*padding: 5px 15px;*/
+	}
+
+	 .highlighted {	 	
+		color: white;
+	 }
+
+
+
 
 }
 
@@ -563,7 +630,9 @@ label strong {
 
 	#member-updates > section {
 	}
-
+	.user-card {
+		overflow: auto;
+	}
 
 	.user-card > img {
 		float: left;

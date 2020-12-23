@@ -14,9 +14,9 @@ closeButton.addEventListener('click', function() {
 const note = document.querySelector('.new-notification');
 let unread = true;
 
-const modal = document.querySelector(".messageModal");
+const modal = document.querySelector(".message-modal");
 const closeModal = document.querySelector(".close");
-const modalContent = document.querySelector(".modalContent");
+const modalContent = document.querySelector(".modal-content");
 const messageContainer = document.querySelector('.message-container');
 
 
