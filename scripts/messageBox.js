@@ -1,9 +1,7 @@
-/* ========== MEssage box ========== */
-
+/* ========== Message box ========== */
 const sendButton = document.querySelector('.button.send');
 const userSearch = document.querySelector('.user-search');
 const userMessage = document.querySelector('.user-message-contents');
-
 
 sendButton.addEventListener('click', function(event) {
 	event.preventDefault()
@@ -26,6 +24,9 @@ sendButton.addEventListener('click', function(event) {
 	}
 });
 
+/**
+* Apply the .error class if there is an error with the users input. Allow this to be called anywhere
+*/
 function removeError(event) {
 	if (event.target.classList.contains('error')) {
 		event.target.classList.remove('error');

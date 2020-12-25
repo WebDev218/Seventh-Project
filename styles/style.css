@@ -145,6 +145,27 @@ header div {
 	height: 1.5em;
 }
 
+.notification:hover, 
+.notification:focus {	
+	/*animation-iteration-count: infinite;*/
+	animation: jingle 1s ease-out backwards infinite;
+}
+
+@keyframes jingle {
+	30% {
+		transform: rotate(10deg) scale(1.2);
+	}
+	50% {
+		transform: rotate(0deg) scale(1);
+	}
+	80% {
+		transform: rotate(-10deg) scale(1.2);	
+	}
+	100% {
+		transform: rotate(0deg) scale(1);	
+	}
+}
+
 .new-notification {
 	fill: lightgreen;
 	visibility: hidden;
@@ -392,7 +413,7 @@ header div {
 	margin: 0 1em;
 	vertical-align: center;
 	font-size: .9em;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	border-top: 1px solid rgb(216, 216, 216);
 }
 .user-card:first-of-type {
@@ -428,6 +449,7 @@ header div {
 	width: 100%;
 }
 .user-message-contents  {
+	margin-top: 1.2em;
 	min-height: 10em;
 }
 
@@ -454,11 +476,16 @@ select {
 		It has a similar look to the rets of the page. Although I decided to make the results
 		slighly transparent to not fully obscure any typed message
 	==========*/
+
+.user-search {
+	margin-bottom: 0;
+}
 .search-results {	
 	position: absolute;
+	display: flex;
 	z-index: 1;
 	margin: auto 0;
-	min-width: 200px;
+	/*min-width: 200px;*/
 	color: white;		
 }
 .result {
@@ -631,7 +658,7 @@ label strong {
 	#member-updates > section {
 	}
 	.user-card {
-		overflow: auto;
+		overflow: none;
 	}
 
 	.user-card > img {
@@ -662,7 +689,7 @@ label strong {
 	border: 2px solid red;
 	}
 
-	.search-results {
+	.search-results {		
 		min-width: 200px;
 	}
 

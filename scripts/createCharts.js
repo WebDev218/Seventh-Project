@@ -7,7 +7,14 @@ let weeklyTraffic =  [];
 let dailyTraffic =  [];
 let hourlyTraffic =  [];
 
-
+/**
+* Create a chart object with the data supplied
+* {@PARAM} HTML element Canvas element the chart should be applied to
+* {@PARAM} String, the  type of chart required
+* {@PARAM} OBJECT, the chart data and styling
+* {@PARAM} OBJECt, the chart configuration options
+* {@RETURN} OBJECT a completed chart object
+*/
 function createChart(canvas, type, data, options) {
 	let newChart = new Chart(canvas, {
 		type: type,
@@ -17,6 +24,11 @@ function createChart(canvas, type, data, options) {
 	return newChart;
 }
 
+/**
+* To be called when the Traffic chart is updated with new data.
+* {@PARAM} STRING Period, the period to be shown as a string
+* {@PARAM} HTML ELEMENT The List item clicked by the user
+*/
 function updateChart(period, element) {
 	function updatePeriodSelection() {
 		for (let i = 0;i< trafficPeriods.length;i++) {
@@ -44,22 +56,7 @@ function updateChart(period, element) {
 }
 
 
-for (let i = 0;i< trafficPeriods.length;i++) {
-	trafficPeriods[i].addEventListener('click', () => {
-		let periodSelected = trafficPeriods[i];
-		periodSelected.classList.add('highlighted');
-		updateChart(periodSelected.textContent, periodSelected); 
-	});
-
-}
-
-
-
-
-
-
-
-/* Traffic chart */ 
+/* ===== Traffic chart ===== */ 
 let trafficData = {
 	labels: monthlyTraffic[0],	
 	datasets: [{
@@ -84,12 +81,22 @@ let trafficOptions = {
 	legend: {display: false}
 };
 
+/**
+* Add event listeners to all of the traffic periods, so that they update the traffic chart when necessary
+* This is not wrapped in a function as it only needs to run once when the page loads. No later options will be added
+*/
+for (let i = 0;i< trafficPeriods.length;i++) {
+	trafficPeriods[i].addEventListener('click', () => {
+		let periodSelected = trafficPeriods[i];
+		periodSelected.classList.add('highlighted');
+		updateChart(periodSelected.textContent, periodSelected); 
+	});
 
+}
 
-/* Bar Graph */
+/* ===== Bar Graph ===== */
 
 const dailyCanvas = document.getElementById("traffic-daily-canvas");
-
 const dailyData = {
 	labels: ["S", "M", "T", "W", "T", "F", "S"],
 	datasets: [{
@@ -112,9 +119,7 @@ const dailyOptions = {
 	}
 };
 
-
-
-/* mmmmm Doughnut */
+/* mmmmm Doughnut ===== */
 
 const mobileCanvas = document.getElementById("mobile-users-canvas");
 const mobileData = {
