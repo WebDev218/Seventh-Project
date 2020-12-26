@@ -5,7 +5,7 @@ function constructElement(type, content='', className='', attribute='', attribut
 		newElement.innerHTML = content;
 	}
 
-	if (className) {
+	if (className.length > 0 && Array.isArray(className)) {		
 		newElement.classList.add(...className);
 	}
 

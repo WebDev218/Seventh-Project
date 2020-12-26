@@ -75,16 +75,16 @@ function populateUsers(users) {
 * {@RETURN} a completed HTML User card with appropriate content and classes. Format below:
 *<div class="member user-card">
 *	<img src="images/'Profile Pic'">
-*	<p>'User Name'</p>
-*	<a class="" href="mailto:'email Address'">'email Address'</a>
-*	<p>'Join Date'</p>
+*	<p class='card-content'>'User Name'</p>
+*	<a class="card-content" href="mailto:'email Address'">'email Address'</a>
+*	<p class='join-date'>'Join Date'</p>
 *</div>
 */
 function createNewMemberCard(member) {		
 	let userImage = constructElement('IMG', '', '', 'src',`images/${member.profilePic}`);
-	let userName = constructElement('P', member.name);
-	let userEmail = constructElement('A', member.email, [], 'href', `mailto:${member.email}`);
-	let userJoin = constructElement('P', `Joined: ${member.joined}`);
+	let userName = constructElement('P', member.name, ['card-content']);
+	let userEmail = constructElement('A', member.email, ['card-content'], 'href', `mailto:${member.email}`);
+	let userJoin = constructElement('P', `${member.joined}`, ['join-date']);
 	let userCard = constructElement('DIV', '', ['member', 'user-card'], '', '', [userImage, userName, userEmail, userJoin]);
 
 	return userCard;
@@ -97,15 +97,17 @@ function createNewMemberCard(member) {
 * {@RETURN} a completed HTML User card with appropriate content and classes. Format below:
 *<div class="activity user-card">
 *	<img src="images/'profile pic'">
-*	<p>'User name'</p>
-*	<p>Active: 'Last Active' day(s) ago.</p>
+*	<p class='card-content'>'User name'</p>
+*	<p class='card-content'>Active: 'Last Active' day(s) ago.</p>
+	<a href='profile link' class='profile-link'>&#62</a>
 *</div>
 */
 function createRecentActivityCard(user) {	
 	let recentImage = constructElement('IMG', '', '', 'src', `images/${user.profilePic}`);
-	let recentName = constructElement('P', `${user.name} ${user.lastAction}`);
-	let lastActive = constructElement('P', `Active: ${new Date().getDate() - new Date(user.lastActive).getDate()} day(s) ago.`);
-	let recentCard = constructElement('DIV', '', ['activity', 'user-card'], '', '', [recentImage, recentName, lastActive]);
+	let recentName = constructElement('P', `${user.name} ${user.lastAction}`, ['card-content']);
+	let lastActive = constructElement('P', `Active: ${new Date().getDate() - new Date(user.lastActive).getDate()} day(s) ago.`, ['card-content']);
+	let profileLink = constructElement('a', '&#62', ['profile-link'], 'href', '#');
+	let recentCard = constructElement('DIV', '', ['activity', 'user-card'], '', '', [recentImage, recentName, lastActive, profileLink]);
 
 	return recentCard;
 }

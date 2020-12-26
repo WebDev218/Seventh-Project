@@ -26,7 +26,7 @@ function searchUsers() {
 
 	 for (let i = 0; i < userNames.length ; i++ ) {		 	
 	 	if (userNames[i].toLowerCase().includes(userInput)) {
-			let foundUser = constructElement('P', userNames[i], 'result');
+			let foundUser = constructElement('P', userNames[i], ['result']);
 
 			foundUser.addEventListener('click', (e) => {
 				userSearch.value = e.target.textContent;

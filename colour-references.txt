@@ -10,7 +10,7 @@ main-alert-message rbg(115, 119, 191)
 grid lines rgb(216, 216, 216) 
 social media icon background rgb(115, 119, 191)
 social card background rgb(251, 251, 251)
-
+profile arrows rgb(122, 126, 194)
 
 
 

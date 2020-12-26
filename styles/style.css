@@ -91,6 +91,7 @@ canvas { /* Credit to: https://treehouse-fewd-102.slack.com/archives/CAW4BE0G4/p
 	==========*/
 	color: white;
 	border: none;
+	max-height: 44px;
 	background: rgb(115, 119, 191);
 	padding: .8em .8em;
 	margin: .6em 0;
@@ -406,21 +407,40 @@ header div {
 	display: grid;
 	grid-template-columns: 1fr;	
 }
-.user-card {	
+.user-card {
+	display: grid;
+	grid-template-columns: 1.5fr 5fr 1fr;
 	max-height: 6em;
 	padding: 20px 5px;
 	height: 100px;
 	margin: 0 1em;
 	vertical-align: center;
-	font-size: .9em;
-	/*overflow: hidden;*/
+	font-size: .8em;	
 	border-top: 1px solid rgb(216, 216, 216);
 }
+
+.card-content {
+	grid-column-start: 2;
+	grid-column-end: 3;
+}
+.card-content:first-of-type {
+	grid-row-start: 1;
+	grid-row-end: 2;	
+}
+.card-content:last-of-type {
+	grid-row-start: 2;
+	grid-row-end: 3;	
+}
+
 .user-card:first-of-type {
 	border: 0;
 }
 .user-card > img {
-	float: left;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	/*float: left;*/
 	max-height: 3em;
 	border-radius: 50%;
 	margin-right: 10px;
@@ -434,8 +454,23 @@ header div {
 	font-weight: bolder;
 }
 
+.join-date {
+	text-align: right;
+}
 
-
+.profile-link {
+	text-align: right;
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	text-decoration: none;
+	font-size: 2em;
+	color: rgba(122, 126, 194, 1);
+}
+.profile-link:hover {
+	color: rgba(122, 126, 194, 0.6);
+}	
 
 /* ========== Message Settings ========== */
 #message-user,
@@ -503,19 +538,28 @@ select {
 /* ========== Settings ========== */
 
 #settings {
-	position: relative;
+	/*position: relative;*/
+	display: grid;
+	grid-template-columns: 1fr 1fr;	
+	grid-template-rows: repeat(5, 1fr);
 }
 #settings h3 {
 	margin-bottom: 2em;
+	grid-column-start: 1;
+	grid-column-end: 3;
 }
-.send-email {	
-}
-.set-public {	
+
+#settings label {
+	width: 60%;
+	grid-column-start: 1;
+	grid-column-end: 3;	
 }
 
 .settings-option {
-	margin: 1em 0;
-	float: left;
+/*	grid-column-start: 1;
+	grid-column-end: 3;*/
+/*	width: 100%;
+	margin: 1em 0;*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -526,7 +570,26 @@ label strong {
 	display: inline;
 	font-size: .8em;
 }
+#settings button {
+/*	margin-top: auto;
+	margin-bottom: 0;*/
+	margin: auto 5px .6em 5px;
+}
+#save {	
+	grid-column-start: 1;
+	grid-column-end: 2;
+}
+#cancel {
+	grid-column-start: 2;
+	grid-column-end: 3;
+}
 
+.time-zone {
+	margin: auto 0;
+	max-height: 45px;
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
 
 
 /* ========== Media Queries ========== */
@@ -597,10 +660,6 @@ label strong {
 	 .highlighted {	 	
 		color: white;
 	 }
-
-
-
-
 }
 
 @media (min-width: 768px) {
@@ -692,15 +751,20 @@ label strong {
 	.search-results {		
 		min-width: 200px;
 	}
+}
 
 
-	.vertical-spacer {
-		position: absolute;
-		left: 1em;
-		bottom: 0;
+@media (min-width: 1024px) {
+	.main-search {
+		float: right;	
+		width: 90%;
+		margin: auto 1em auto auto;	
+		height: 1.5em;
 	}
 
-
+	#settings label {
+		width: 45%;
+	}
 }
 
 /* ========== temporary fixes ========== */
