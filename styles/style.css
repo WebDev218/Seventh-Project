@@ -46,6 +46,10 @@ canvas { /* Credit to: https://treehouse-fewd-102.slack.com/archives/CAW4BE0G4/p
   /*This was added because the canvas would grow with the browser window but not shrink*/
 }
 
+.yourapp-logo {
+	margin: auto 2em;
+}
+
 
 
 /* ========== Page Foundations ========== */
@@ -57,23 +61,16 @@ canvas { /* Credit to: https://treehouse-fewd-102.slack.com/archives/CAW4BE0G4/p
 	==========*/
 #grid-wrapper {
 	display: grid;
-	grid-template-rows: 1fr;
+	grid-template-rows: 70px 70px 1fr;
 	grid-gap: 0;
 	grid-template-areas: 
 		"header"
-		"page-content";
+		"nav"
+		"main";
 }
-.page-content {
-	grid-area: page-content;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-areas: 
-		"main-nav"
-		"main-content";
-}
-
 
 #main-content {
+	grid-area: main;
 	padding: 0 10px;
 	background: white;
 }
@@ -123,9 +120,19 @@ header div {
 	float: left;
 	font-size: 20px;
 	margin: .5em 1em;
-	font-weight: lighter;
+	font-weight: 100;
 	display: inline-block;
+
 }
+.your-app strong {
+	font-weight: 700;
+}
+
+.your-app sup {
+	font-size: .3em;
+	top: -1.5em;
+}
+
 
 /* User Area */
 .header-image {	
@@ -260,7 +267,7 @@ header div {
 	fill: rgb(166, 166, 185);
 }
 #main-nav {
-	grid-area: main-nav;
+	grid-area: nav;
 	background: rgb(77, 76, 114);
 }
 #main-nav .icon:hover {
@@ -663,10 +670,6 @@ label strong {
 }
 
 @media (min-width: 768px) {
-	#grid-wrapper {
-		margin: 0;
-	}
-
 	.main-search {
 		width: 40%
 	}
@@ -674,12 +677,19 @@ label strong {
 	#main-alert {
 		width: 95%;
 	}
-
-	.page-content {
-	grid-template-columns: 80px 1fr;
-	grid-template-areas: 
-		"main-nav main-content";
+	#main-nav {
+		width: 70px;
 	}
+
+	#grid-wrapper {	
+		margin: 0;		
+		grid-template-rows: 60px 1fr;		
+		grid-template-columns: 70px 1fr;
+		grid-template-areas: 
+			"header header"
+			"nav main";			
+	}	
+
 	.two-columns {
 		grid-template-columns: 1fr 1fr;
 	}
