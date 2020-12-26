@@ -62,6 +62,8 @@ canvas { /* Credit to: https://treehouse-fewd-102.slack.com/archives/CAW4BE0G4/p
 #grid-wrapper {
 	display: grid;
 	grid-template-rows: 70px 70px 1fr;
+	
+	max-width: 100%;
 	grid-gap: 0;
 	grid-template-areas: 
 		"header"
@@ -78,8 +80,9 @@ canvas { /* Credit to: https://treehouse-fewd-102.slack.com/archives/CAW4BE0G4/p
 .main-content-row {
 	/* ==========
 		Used to differentiate rows in the layout
-	==========*/
+	==========*/	
 	display: grid;	
+	grid-template-columns: 100%;
 }
 
 .button {
@@ -363,7 +366,7 @@ header div {
 /* ========== Social Media ========== */
 #social-media {		
 	display: grid;	
-	grid-template-columns: 1fr;
+	grid-template-columns: 1fr;	
 	grid-template-rows: 1fr 1fr 1fr;
 }
 .social-card {	
@@ -412,7 +415,8 @@ header div {
 
 #member-updates {
 	display: grid;
-	grid-template-columns: 1fr;	
+	/*grid-template-columns: 1fr;*/
+	grid-template-columns: 100%;
 }
 .user-card {
 	display: grid;
@@ -607,11 +611,16 @@ label strong {
 	padding: 0;	
 	text-align: center;
 	}
-
 	header div {
 		float: none;
 		width: 100%;
 	}
+
+	#grid-wrapper {			
+		grid-template-rows: 90px 1fr;				
+		grid-template-columns: 100%;
+		border: 1px solid blue;
+	}	
 
 	#main-content {
 		padding: 0;
